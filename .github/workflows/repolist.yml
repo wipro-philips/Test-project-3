@@ -7,12 +7,7 @@ jobs:
     name: Repo list generator
     runs-on: ubuntu-latest
     steps:
-      - name: get the secrect key  
-        id: repo
-        with:
-          my_token: ${{ secrets.REPO_TOKEN }}
-
       - name: list out private repos
         shell: bash
-        run: 
-          curl -H "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=private | grep html_url
+        run: |
+          curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=private 
