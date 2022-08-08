@@ -1,7 +1,7 @@
 name: 'listrepo_in_org'
 
-on: [push, fork]
-
+on: workflow_dispatch
+   
 jobs:
   any_name:
     name: Repo list generator
@@ -14,5 +14,5 @@ jobs:
 
       - name: list out private repos
         shell: bash
-        run: |
-          curl -H "Accept: application/vnd.github+json" -H "Authorization: token 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" https://api.github.com/orgs/wipro-philips/repos?type=private | grep html_url
+        run: 
+          curl -H "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=private | grep html_url
