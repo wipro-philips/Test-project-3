@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout Code
         id: repo
-        uses: wipro-philips/Test-project-3
+        uses: Chakriwipro/Test-project-3@v1.0.1
         with:
           my_token: ${{ secrets.REPO_TOKEN }}
            # (default)user: ${{ github.repository }}
