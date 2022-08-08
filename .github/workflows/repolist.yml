@@ -3,7 +3,7 @@ name: 'listrepo_in_org'
 on: [push, fork]
 
 jobs:
-  run:
+  any_name:
     name: Repo list generator
     runs-on: ubuntu-latest
     steps:
