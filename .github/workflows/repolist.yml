@@ -12,14 +12,10 @@ jobs:
   run:
     name: Repo list generator
     runs-on: ubuntu-latest
-    if: >
-      ${{ github.event.event == 'push' }} ||
-      ${{ github.event.event == 'workflow_dispatch' }} ||
-      contains(github.event.pull_request.labels.*.name, 'wait-to-merge')
     steps:
       - name: Checkout Code
         id: repo
-        uses: Chakriwipro/Test-project-3@v1.0.1 
+        # uses: Chakriwipro/Test-project-3@v1.0.1 
         with:
           my_token: ${{ secrets.REPO_TOKEN }}
            # (default)user: ${{ github.repository }}
