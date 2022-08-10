@@ -12,7 +12,7 @@ jobs:
         run: |
           curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=private | grep full_name
           
-       run: |
-           curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=public | grep full_name
-
+      - name: Build with Maven
+        run: |
+          curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=public | grep full_name
     
