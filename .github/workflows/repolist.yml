@@ -7,12 +7,12 @@ jobs:
     name: Repo list generator
     runs-on: ubuntu-latest
     steps:
-      - name: list out private repos
+      - name: list of private repos 
         shell: bash
         run: |
           curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=private | grep full_name
           
-      - name: Build with Maven
+      - name: list with public reops 
         run: |
           curl -H -X "Accept: application/vnd.github+json" -H "Authorization:token ${{ secrets.REPO_TOKEN }}" https://api.github.com/orgs/wipro-philips/repos?type=public | grep full_name
     
